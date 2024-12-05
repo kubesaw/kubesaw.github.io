@@ -21,7 +21,7 @@ python3 -m venv venv
 ``` 
 NOTE: the second `venv` is the name of the folder containing the [virtual environment](https://docs.python.org/3/library/venv.html)
 
-Now you need to activate the virtual env so that all the dependencies will be installed only in here, and not on your global python intallation.
+Now you need to activate the virtual env so that all the dependencies will be installed only here, not on your global python installation.
 
 ```shell
 source venv/bin/activate
