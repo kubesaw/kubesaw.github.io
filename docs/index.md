@@ -1,4 +1,4 @@
-# KubeSaw
+# Welcome to KubeSaw
 KubeSaw is a powerful solution designed to manage multi-tenant Kubernetes clusters, helping organizations minimize operational costs while maintaining high security standards. KubeSaw slices Kubernetes clusters into smaller, manageable units called Spaces, each composed of one or more Kubernetes Namespaces.
 While KubeSaw can be described as a Namespace-as-a-Service (NaaS) solution, it provides much more. KubeSaw also supports multi-cluster environments, allowing organizations to manage namespaces and users within their cluster fleet. KubeSaw empowers teams to manage one or more Kubernetes clusters at scale, ensuring security, flexibility, and cost efficiency.
 
