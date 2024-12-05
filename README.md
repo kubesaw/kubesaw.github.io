@@ -4,7 +4,9 @@ This repository contains the documentation website code and Markdown source file
 
 ## Contributing
 
-The website is built using [mkdocs](https://www.mkdocs.org/getting-started/#getting-started-with-mkdocs) 
+The website is built using [mkdocs](https://www.mkdocs.org/getting-started/#getting-started-with-mkdocs)
+
+**NOTE**: To contribute changes, make sure you do that from your own fork!
 
 ### Prerequisites
 
