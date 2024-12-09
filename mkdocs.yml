@@ -1,0 +1,26 @@
+site_name: KubeSaw
+site_url: https://kubesaw.github.io
+repo_url: https://github.com/kubesaw/kubesaw.github.io
+repo_name: kubesaw/kubesaw.github.io
+nav:
+  - Home: index.md
+  - Components: components.md
+  - Installation: how-to-install.md
+  - Configuration: how-to-configure.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.footer
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
