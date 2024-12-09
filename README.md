@@ -35,8 +35,7 @@ source venv/bin/activate
 pip install -r requirements.txt 
 ```
 
-NOTE:
-- add newly needed dependencies in the `requirements.txt` file
+**NOTE**: add newly needed dependencies in the `requirements.txt` file
 
 ### 3. Run the local server
 
