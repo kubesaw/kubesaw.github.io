@@ -54,7 +54,9 @@ deactivate
 
 ### 5. Publish your changes
 
-When you're done with your changes open a PR for the `main` branch, once the PR is merged the changes will be automatically deployed to https://kubesaw.github.io/ by the GH CI job.
+When you're done with your changes open a PR for the `main` branch, once the PR is merged, the GH CI job will build and push the website source code to the `gh-pages` branch and the changes will be automatically be deployed to https://kubesaw.github.io .
+
+**WARNING** : do not open PRs or push changes to the `gh-pages` branch , only the GH CI should do that once a PR is merged in the `main` branch.  
 
 
 
