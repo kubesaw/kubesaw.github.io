@@ -36,3 +36,5 @@ The source code for both registration-service and proxy is available here [regis
 ksctl is a command-line tool that helps you manage your KubeSaw instance. It provides commands for managing the clusters, spaces and users in KubeSaw.
 
 The source code is available here [ksctl](https://github.com/kubesaw/ksctl)
+
+See also the [ksctl cheat sheet](ksctl-cheat-sheet.md)
