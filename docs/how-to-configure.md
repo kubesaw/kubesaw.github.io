@@ -140,3 +140,6 @@ type: Opaque
 ### Secret loading
 
 As you can notice, the name of the secret is referenced in the `toolchainconfig` CR ( see `ToolchainConfig.Spec.Host.Notifications.Secret.Ref` field ) and every field in the data section of the secret was referenced also in the `ToolchainConfig.Spec.Host.Notifications.Secret`, in this way the host-operator would know which secret and which fields to load the configuration from. Same thing for secrets referenced in the members section, which will be read by the member operator.
+
+## Provisioning KubeSaw admins
+You can set up admin access to the KubeSaw instances by leveraging the ksctl command line, please refer to the [Admin Usage section](ksctl-cheat-sheet.md#admin-usage). 
