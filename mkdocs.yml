@@ -8,6 +8,7 @@ nav:
   - Installation: how-to-install.md
   - Configuration: how-to-configure.md
   - 'ksctl cheat sheet': ksctl-cheat-sheet.md
+  - Contributing: contributing.md
 theme:
   name: material
   features:
