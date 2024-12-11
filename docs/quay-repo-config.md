@@ -21,7 +21,7 @@ operators to OpenShift cluster. Please make sure that the repositories exist in 
 
 ### Public visibility
 
-All aforementioned repositories has to be public, so make sure that the visibility is set to `public` for all of them:
+All aforementioned repositories have to be public, so make sure that the visibility is set to `public` for all of them:
 
 * `https://quay.io/repository/<quay-username>/host-operator?tab=settings`
 * `https://quay.io/repository/<quay-username>/host-operator-bundle?tab=settings`
