@@ -13,16 +13,17 @@ Install the [required tools](required-tools.md).
 ### Authentication
 Configure authentication for the cluster using one of the following options:
 
-1. Contact a member of the KubeSaw Team for instructions on how to configure the cluster to use our internal Dev SSO.
 
-2. Configure your own Keycloak server and set up authentication on the OpenShift cluster: [configuring internal oauth](https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html)
+1. Configure your own Keycloak server and set up authentication on the OpenShift cluster: [configuring internal oauth](https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html)
 
-3. Deploy and configure keycloak internally as part of the cluster. Just add `DEV_SSO=true` parameter to the `dev` targets. For eg.: `make dev-deploy-latest DEV_SSO=true` will deploy latest version of the operators with a preconfigured keycloak instance and one default keycloak user `user1@user.us` with password `user1`.
+2. Deploy and configure keycloak internally as part of the cluster. Just add `DEV_SSO=true` parameter to the `dev` targets. For eg.: `make dev-deploy-latest DEV_SSO=true` will deploy latest version of the operators with a preconfigured keycloak instance and one default keycloak user `user1@user.us` with password `user1`.
 If you are presented with the following error, then you need to accept the self-signed certificate of the dev Keycloak instance first. Go to `https://keycloak-<dev-sso-namespace>.<domain>/auth (the complete link is printed out at the end of the command) and accept the certificate.:
 
 ![insecure keycloak](images/insecure_keycloak.png "Insecure keycloak configuration")
 
-**NOTE**: This third option *only works with OCP and CRC* clusters atm.
+**NOTE**: This option *only works with OCP and CRC* clusters atm.
+
+3. If you're a RedHatter, contact a member of the KubeSaw Team for instructions on how to configure the cluster to use our internal Dev SSO.
 
 ## Install
 
@@ -41,7 +42,7 @@ Clone this repository `git clone git@github.com:codeready-toolchain/toolchain-e2
 
 This repository provides you multiple Makefile targets that you can use - it depends on which version of KubeSaw operators you want to install.
 
-**NOTE**: If the cluster is an OSD cluster, then set the variable `IS_OSD=true` when running any of the Makefile targets (for example: `make appstudio-dev-deploy-latest IS_OSD=true`).
+**NOTE**: If the cluster is an OSD cluster, then set the variable `IS_OSD=true` when running any of the Makefile targets (for example: `make dev-deploy-latest IS_OSD=true`).
 
 **IMPORTANT**: Make note of the Registration Service URL that is printed at the end of the target execution.
 
@@ -61,7 +62,16 @@ make appstudio-dev-deploy-latest
 If you want to install a local version of a specific KubeSaw operator in dev mode then:
 
 1. [Configure your quay account for dev deployment](quay-repo-config.md)
-2. Run any from the following commands:
+2. Clone the `toolchain-e2e` repo (`git clone git@github.com:codeready-toolchain/toolchain-e2e.git`) and the operator(s) repo(s) that you'd like to test locally. They have to share the same parent folder for the local deployment to work, eg:
+```shell
+$ tree -d -L 1
+.
+├── host-operator
+├── member-operator
+├── registration-service
+├── toolchain-e2e
+```
+3.  From the `toolchain-e2e` repo folder, run any of the following commands:
 ```bash
 # To deploy local versions of all repositories:
 make dev-deploy-e2e-local
@@ -127,6 +137,8 @@ Select option 2 and log in using the same account used from the [Register a Kube
 After logging in, the user will have access to only the namespaces created for them.
 
 ### Cleanup
+**NOTE**: the make targets are available in the `toolchain-e2e` repo (`git clone git@github.com:codeready-toolchain/toolchain-e2e.git`)
+
 #### Remove Only Users and Their Namespaces
 
 Run `make clean-users`
