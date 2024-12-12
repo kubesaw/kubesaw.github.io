@@ -13,7 +13,7 @@ Install the [required tools](required-tools.md).
 ### Authentication
 Configure authentication for the cluster using one of the following options:
 
-1. Contact a member of the Dev Sandbox Team for instructions on how to configure the cluster to use our internal Dev SSO.
+1. Contact a member of the KubeSaw Team for instructions on how to configure the cluster to use our internal Dev SSO.
 
 2. Configure your own Keycloak server and set up authentication on the OpenShift cluster: [configuring internal oauth](https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html)
 
