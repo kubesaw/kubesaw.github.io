@@ -146,3 +146,7 @@ Run `make clean-users`
 #### Remove All Sandbox-related Resources
 
 Run `make clean-e2e-resources`
+
+## Running e2e tests locally
+
+If you're interested in running/debugging the e2e tests locally, please refer to [Running e2e locally](https://github.com/mfrancisc/toolchain-e2e/tree/movedocs?tab=readme-ov-file#running-locally)
