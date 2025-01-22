@@ -43,9 +43,11 @@ Clone this repository `git clone git@github.com:codeready-toolchain/toolchain-e2
 This repository provides you multiple Makefile targets that you can use - it depends on which version of KubeSaw operators you want to install.
 
 NOTE:
-If the connection to the cluster requires you to manually set the `--insecure-skip-tls-verify=true`,
-you can do so when running any of the Makefile targets by setting the DISABLE_KUBE_CLIENT_TLS_VERIFY variable to true
-(for example: `make appstudio-dev-deploy-latest DISABLE_KUBE_CLIENT_TLS_VERIFY=true`).
+Set the `DISABLE_KUBE_CLIENT_TLS_VERIFY` environment variable to `true` when the TLS connection to the cluster cannot be verified (eg: when it uses a self-signed certificate). For example: 
+
+```
+make appstudio-dev-deploy-latest DISABLE_KUBE_CLIENT_TLS_VERIFY=true
+```
 
 **IMPORTANT**: Make note of the Registration Service URL that is printed at the end of the target execution.
 
