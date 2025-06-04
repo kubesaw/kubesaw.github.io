@@ -1,0 +1,1035 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kubesaw.github.io/ksctl-cheat-sheet/">
+      
+      
+        <link rel="prev" href="../how-to-configure/">
+      
+      
+        <link rel="next" href="../contributing/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>ksctl cheat sheet - KubeSaw</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cheat-sheet-for-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="KubeSaw" class="md-header__button md-logo" aria-label="KubeSaw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KubeSaw
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ksctl cheat sheet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubesaw/kubesaw.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubesaw/kubesaw.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="KubeSaw" class="md-nav__button md-logo" aria-label="KubeSaw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    KubeSaw
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubesaw/kubesaw.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubesaw/kubesaw.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ksctl cheat sheet
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    ksctl cheat sheet
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-usersignup-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding UserSignup name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approving-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approving a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deactivating-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deactivating a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banning-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banning a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Event
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin manifests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-serviceaccount-for-cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add ServiceAccount for cli usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add ServiceAccount for cli usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serviceaccount-namespace-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      ServiceAccount namespace location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ksctlyaml-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate ksctl.yaml files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate ksctl.yaml files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-ksctl-generate-cli-configs-command-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the ksctl generate cli-configs command locally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-usersignup-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding UserSignup name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approving-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approving a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deactivating-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deactivating a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#banning-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banning a user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-event" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Event
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Admin usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin manifests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clusters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-serviceaccount-for-cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add ServiceAccount for cli usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add ServiceAccount for cli usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serviceaccount-namespace-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      ServiceAccount namespace location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ksctlyaml-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate ksctl.yaml files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate ksctl.yaml files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-the-ksctl-generate-cli-configs-command-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing the ksctl generate cli-configs command locally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="cheat-sheet-for-commands">Cheat sheet for commands</h1>
+<p>This section covers the most useful commands. However, the <code>ksctl</code> binary provides other commands than those that are listed here. To see all of them, run:</p>
+<pre><code class="language-shell">ksctl --help
+</code></pre>
+<p>The <code>ksctl --version</code> command shows the version of the binary (based on the commit hash)</p>
+<pre><code class="language-shell">ksctl --version
+</code></pre>
+<p><strong>NOTE</strong>: Prerequisite: The <code>.ksctl.yaml</code> config file is needed to run user-management related <code>ksctl</code> commands. The default location is your home directory: <code>~/.ksctl.yaml</code>, but you can use the <code>--config</code> flag to specify a different path. It contains the configuration settings for the host and member clusters together with the granted token.</p>
+<h2 id="finding-usersignup-name">Finding UserSignup name</h2>
+<p>When users sign up, a <code>UserSignup</code> resource is created on their behalf on the Host cluster. For most of the user-management operations, the name of the <code>UserSignup</code> resource is needed.
+To see all <code>UserSignup</code> resource names run:</p>
+<pre><code class="language-shell">$ ksctl get usersignup -t host
+
+NAME                 USERNAME     COMPLETE   REASON            COMPLIANTUSERNAME   EMAIL
+...
+2237e8be-f678d76ff   dummy-name   False      PendingApproval                       dummy@email.com
+...
+</code></pre>
+<p>The first column is the name of the <code>UserSignup</code> resource.</p>
+<p>To look up a UserSignup resource from the user's email address, run:
+in Linux:</p>
+<pre><code class="language-shell">ksctl get -t host usersignups -l toolchain.dev.openshift.com/email-hash=`echo -n &lt;email_address&gt; | md5sum | cut -d ' ' -f 1`
+</code></pre>
+<p>in macOS:</p>
+<pre><code class="language-shell">ksctl get -t host usersignups -l toolchain.dev.openshift.com/email-hash=`echo -n &lt;email_address&gt; | md5`
+</code></pre>
+<h2 id="approving-a-user">Approving a user</h2>
+<p>To approve a user, either use the user's email:</p>
+<pre><code class="language-shell">ksctl approve --email &lt;user_email&gt;
+</code></pre>
+<p>or <a href="#finding-usersignup-name">get the UserSignup name</a>, and then run:</p>
+<pre><code class="language-shell">ksctl approve --name &lt;usersignup_name&gt;
+</code></pre>
+<p><strong>WARNING</strong>: By default, the <code>approve</code> command checks if the user has already initiated the phone verification process. To skip this check for the users or environments where the phone verification is not required, use the <code>--skip-phone-check</code> flag.</p>
+<p>The command will print out additional information about the <code>UserSignup</code> resource to be approved, and it will also ask for a confirmation.</p>
+<h2 id="deactivating-a-user">Deactivating a user</h2>
+<p>To deprovision a user from the platform and keep the <code>UserSignup</code> resource there, use <code>deactivate</code> command. First <a href="#finding-usersignup-name">get the UserSignup name</a>, then run:</p>
+<pre><code class="language-shell">ksctl deactivate &lt;usersignup_name&gt;
+</code></pre>
+<p>The command will print out additional information about the <code>UserSignup</code> resource to be deactivated and it will also ask for a confirmation.</p>
+<h2 id="deleting-a-user">Deleting a user</h2>
+<p>To completely remove a user from the platform including the <code>UserSignup</code> resource (for example, as part of a GDPR request), use the <code>gdpr-delete</code> command. First <a href="#finding-usersignup-name">get the UserSignup name</a>, then run:</p>
+<pre><code class="language-shell">ksctl gdpr-delete &lt;usersignup_name&gt;
+</code></pre>
+<p>The command will print out additional information about the <code>UserSignup</code> resource to be deleted and it will also ask for a confirmation.</p>
+<h2 id="banning-a-user">Banning a user</h2>
+<p>To ban a user which in turn de-provisions the account and doesn't allow the user to sign up again, use the <code>ban</code> command. First <a href="#finding-usersignup-name">get the UserSignup name</a>, then run:</p>
+<pre><code class="language-shell">ksctl ban &lt;usersignup_name&gt; &lt;ban_reason&gt;
+</code></pre>
+<p>The command will print out additional information about the <code>UserSignup</code> resource to be banned, and it will also ask for a confirmation.</p>
+<h2 id="creating-an-event">Creating an Event</h2>
+<p>Social Events are a feature allowing users to sign up without having to go through the phone verification process. This is useful when running labs or workshops, as it lets attendees get up and run it quickly without having to fulfill all the requirements of the standard sign up process.</p>
+<p>Social Events are temporary in nature; creating an event will produce a unique activation code that may be used for a predefined period of time, after which the code will no longer work.</p>
+<p>Use the <code>create-event</code> command to create a new event, specifying a <code>description</code>, the <code>start-date</code> and <code>end-date</code> range and <code>max-attendees</code>.  The date range should encompass the dates of the event (it is recommended that the range actually be expanded to include the day before and after the event just to be safe), and the maximum attendees should also be slightly higher than the expected attendees in the rare case of technical difficulties or additional attendees.</p>
+<p>Here's an actual example:</p>
+<pre><code class="language-shell">ksctl create-event --description=&quot;Summit Connect Dallas / SF&quot; --start-date=2022-09-27 --end-date=2022-09-30 --max-attendees=70
+</code></pre>
+<p>The output from this command should look something like this:</p>
+<pre><code>Social Event successfully created. Activation code is 'bduut'
+</code></pre>
+<p>The activation code should be kept secret, and only provided to the event organizer.</p>
+<h2 id="admin-usage">Admin usage</h2>
+<p>There is a provisioning flow for KubeSaw administrators separate from what the standard KubeSaw users use when they are signing up through the registration service.
+There are two ways of granting permissions to the KubeSaw administrators, either via a ServiceAccount or via an OpenShift user.</p>
+<h3 id="admin-manifests">Admin manifests</h3>
+<p>The admin manifests are generated via <code>ksctl generate admin-manifests</code> command. The command generates manifests in a Kustomize folders, so it can be easily synced by another tool (eg. ArgoCD) to the cluster.
+The content of the admin manifests is defined in <code>kubesaw-admins.yaml</code> file, which is used also as the source for <code>ksctl generate admin-manifests</code> command.
+You can see an example of such a file in <a href="https://github.com/kubesaw/ksctl/blob/master/test-resources/dummy.openshiftapps.com/kubesaw-admins.yaml">kubesaw-admins.yaml</a>.</p>
+<h3 id="clusters">Clusters</h3>
+<p>The required sections of the <code>kubesaw-admins.yaml</code> file is a <code>clusters</code> section defining location and names of the clusters used in the KubeSaw instance. This is necessary for running <code>ksctl generate cli-configs</code> command which adds the information to all generated <code>ksctl.yaml</code> files.</p>
+<pre><code class="language-yaml">clusters:
+  host:
+    api: https://api.dummy-host.openshiftapps.com:6443
+  members:
+  - api: https://api.dummy-m1.openshiftapps.com:6443
+    name: member-1
+  - api: https://api.dummy-m2.openshiftapps.com:6443
+    name: member-2
+</code></pre>
+<h3 id="add-serviceaccount-for-cli-usage">Add ServiceAccount for cli usage</h3>
+<p>The <code>serviceAccounts</code> section contains definition of ServiceAccounts together with the granted permissions.
+To add a new SA that is supposed to be used in a combination with cli commands, add the following code:</p>
+<pre><code class="language-yaml">serviceAccounts:
+- name: &lt;your-name&gt;
+  host:
+    roleBindings:
+    - namespace: toolchain-host-operator
+      roles:
+      - &lt;roles-or-commands-to-be-granted&gt;
+    clusterRoleBindings:
+      clusterRoles:
+      - ...
+
+  member:
+    roleBindings:
+    - namespace: toolchain-member-operator
+      roles:
+      - &lt;roles-or-commands-to-be-granted&gt;
+    clusterRoleBindings:
+      clusterRoles:
+      - ...
+</code></pre>
+<h4 id="serviceaccount-namespace-location">ServiceAccount namespace location</h4>
+<p>By default, all <code>ServiceAccounts</code> are created in default namespaces:</p>
+<ul>
+<li><code>kubesaw-admins-host</code> for the host cluster</li>
+<li><code>kubesaw-admins-meber</code> for the member cluster</li>
+</ul>
+<p>The default location can be changed in <code>kubesaw-admin.yaml</code> file:</p>
+<pre><code class="language-yaml">defaultServiceAccountsNamespace:
+  host: your-host-namespace
+  member: your-member-namespace
+</code></pre>
+<p>These two namespaces have to be named differently.</p>
+<p>It's also possible to override the namespace location for a given <code>ServiceAccount</code>:</p>
+<pre><code class="language-yaml">serviceAccounts:
+- name: in-namespace-sa
+  namespace: specific-sa-namespace
+  host:
+    ...
+  member:
+    ...
+</code></pre>
+<h4 id="generate-ksctlyaml-files">Generate ksctl.yaml files</h4>
+<p>For each ServiceAccount defined in this section, the <code>ksctl generate cli-configs</code> generates a separate <code>ksctl.yaml</code> file with the corresponding cluster configuration and tokens. As an administrator of the clusters, run this command and distribute securely the generated <code>ksctl.yaml</code> files to other team members.</p>
+<h5 id="testing-the-ksctl-generate-cli-configs-command-locally">Testing the <code>ksctl generate cli-configs</code> command locally</h5>
+<ol>
+<li>Run <code>make install</code></li>
+<li>Create <code>kubesaw-admins.yaml</code> (as an example, check <a href="https://github.com/kubesaw/ksctl/blob/master/test-resources/dummy.openshiftapps.com/kubesaw-admins.yaml">kubesaw-admins.yaml</a>.)</li>
+<li>Run <code>ksctl generate admin-manifests --kubesaw-admins &lt;path&gt;/kubesaw-admins.yaml --out-dir &lt;admin-manifests-out-dir-path&gt;</code></li>
+<li>Create resources from the <code>&lt;admin-manifests-out-dir-path&gt;</code> of the previous command. Please, note that you will need to create some namespaces manually (<code>oc create ns &lt;namespace-name&gt;</code>), such as <code>host-sre-namespace</code>, <code>first-component</code>, <code>second-component</code>, <code>some-component</code>, <code>member-sre-namespace</code>, and <code>crw</code>, for example.</li>
+<li>Run <code>oc apply -k &lt;admin-manifests-out-dir-path&gt;/host</code></li>
+<li>Run <code>oc apply -k &lt;admin-manifests-out-dir-path&gt;/member</code></li>
+<li>Run <code>oc apply -k &lt;admin-manifests-out-dir-path&gt;/member-3</code></li>
+<li>Run <code>ksctl generate cli-configs -k &lt;kubeconfig-path&gt; -c &lt;path&gt;/kubesaw-admins.yaml</code></li>
+</ol>
+<h3 id="users">Users</h3>
+<p>The <code>ksctl</code> command can generate  The <code>users</code> section contains definition for users, identities, and the permissions granted to them.
+KubeSaw uses a suffix <code>-crtadmin</code> for the admin usernames which are blocked from signing-up as a regular users via registration service. This ensures that provisioning admin users is fully isolated from the process of the regular ones.
+To add a -crtadmin user for a particular component in member cluster, update the corresponding <code>kubesaw-admins.yaml</code> file by adding the following code under the <code>users</code> section:</p>
+<p>For an admin of the component that needs to manually approve operator updates:</p>
+<pre><code class="language-yaml">users:
+- name: &lt;your-name&gt;-maintainer
+  id:
+  - &lt;sso-identities&gt;
+  member:
+    roleBindings:
+    - namespace: &lt;namespace-name&gt;
+      roles:
+      - view-secrets
+      clusterRoles:
+      - &lt;edit/admin&gt;
+      - some-extra-permissions
+    clusterRoleBindings:
+      clusterRoles:
+      - some-extra-cluster-scope-permissions
+</code></pre>
+<p><strong>NOTE</strong>: The creation of the ClusterRoles is not managed via ksctl, you need to make sure that they are created in the cluster.</p>
+<p>For a maintainer of the component with limited permissions:</p>
+<pre><code class="language-yaml">- name: &lt;your-name&gt;-maintainer
+  id:
+  - &lt;sso-identities&gt;
+  member:
+    roleBindings:
+    - namespace: &lt;namespace-name&gt;
+      clusterRoles:
+      - &lt;edit/view&gt;
+</code></pre>
+<p>If you need any permissions also in a namespace in host cluster (to be used mainly by KubeSaw maintainers), then include the host section in the user's definition as well:</p>
+<pre><code class="language-yaml">- name: &lt;your-name&gt;-maintainer
+  id:
+  - &lt;sso-identities&gt;
+  host:
+    roleBindings:
+    - namespace: &lt;namespace-name&gt;
+    ...
+  member:
+    roleBindings:
+    - namespace: &lt;namespace-name&gt;
+    ...
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../how-to-configure/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Configuration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Contributing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

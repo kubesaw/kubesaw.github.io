@@ -1,0 +1,1061 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://kubesaw.github.io/contributing/">
+      
+      
+        <link rel="prev" href="../ksctl-cheat-sheet/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Contributing - KubeSaw</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contributing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="KubeSaw" class="md-header__button md-logo" aria-label="KubeSaw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            KubeSaw
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kubesaw/kubesaw.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubesaw/kubesaw.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="KubeSaw" class="md-nav__button md-logo" aria-label="KubeSaw" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    KubeSaw
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kubesaw/kubesaw.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kubesaw/kubesaw.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Components
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-to-configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ksctl-cheat-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ksctl cheat sheet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openshift-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenShift Cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-self-provisioner-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Self Provisioner Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-kubesaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install KubeSaw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-greatest-kubesaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest greatest KubeSaw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-greatest-kubesaw-for-appstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest greatest KubeSaw for AppStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolchainstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      ToolchainStatus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-a-new-kubesaw-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register a new KubeSaw User
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Register a new KubeSaw User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Approval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Approval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-kubesaw-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using KubeSaw instance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-only-users-and-their-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Only Users and Their Namespaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-sandbox-related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove All Sandbox-related Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-e2e-tests-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running e2e tests locally
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openshift-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenShift Cluster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-self-provisioner-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Self Provisioner Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-kubesaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install KubeSaw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-greatest-kubesaw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest greatest KubeSaw
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-greatest-kubesaw-for-appstudio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latest greatest KubeSaw for AppStudio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local version
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolchainstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      ToolchainStatus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-a-new-kubesaw-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register a new KubeSaw User
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Register a new KubeSaw User">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Approval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-approval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Approval
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-kubesaw-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using KubeSaw instance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cleanup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cleanup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-only-users-and-their-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove Only Users and Their Namespaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-all-sandbox-related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove All Sandbox-related Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-e2e-tests-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Running e2e tests locally
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="contributing">Contributing</h1>
+<p>This document describes how to install KubeSaw in a development environment.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="openshift-cluster">OpenShift Cluster</h3>
+<p>Ensure you have access to an OpenShift 4.6+ cluster with cluster admin privileges and log in using <code>oc login</code></p>
+<h3 id="required-tools">Required Tools</h3>
+<p>Install the <a href="../required-tools/">required tools</a>.</p>
+<h3 id="authentication">Authentication</h3>
+<p>Configure authentication for the cluster using one of the following options:</p>
+<ol>
+<li>
+<p>Configure your own Keycloak server and set up authentication on the OpenShift cluster: <a href="https://docs.openshift.com/container-platform/4.6/authentication/configuring-internal-oauth.html">configuring internal oauth</a></p>
+</li>
+<li>
+<p>Deploy and configure keycloak internally as part of the cluster. Just add <code>DEV_SSO=true</code> parameter to the <code>dev</code> targets. For eg.: <code>make dev-deploy-latest DEV_SSO=true</code> will deploy latest version of the operators with a preconfigured keycloak instance and one default keycloak user <code>user1@user.us</code> with password <code>user1</code>.
+If you are presented with the following error, then you need to accept the self-signed certificate of the dev Keycloak instance first. Go to `https://keycloak-<dev-sso-namespace>.<domain>/auth (the complete link is printed out at the end of the command) and accept the certificate.:</p>
+</li>
+</ol>
+<p><img alt="insecure keycloak" src="../images/insecure_keycloak.png" title="Insecure keycloak configuration" /></p>
+<p><strong>NOTE</strong>: This option <em>only works with OCP and CRC</em> clusters atm.</p>
+<ol>
+<li>If you're a RedHatter, contact a member of the KubeSaw Team for instructions on how to configure the cluster to use our internal Dev SSO.</li>
+</ol>
+<h2 id="install">Install</h2>
+<h3 id="remove-self-provisioner-role">Remove Self Provisioner Role</h3>
+<p>It is strongly recommended to remove the self-provisioner role to disallow users from creating their own namespaces. This is because KubeSaw is designed to create/manage namespaces for users automatically. It creates these namespaces based on predefined templates that also define resource limits so only these namespaces should be accessible to KubeSaw users.</p>
+<p>Run the following commands:</p>
+<pre><code class="language-shell">oc patch clusterrolebinding.rbac self-provisioners -p '{&quot;subjects&quot;: null, &quot;metadata&quot;: {&quot;annotations&quot;:{&quot;rbac.authorization.kubernetes.io/autoupdate&quot;: &quot;false&quot;}}}'
+oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
+</code></pre>
+<h3 id="install-kubesaw">Install KubeSaw</h3>
+<p>Clone this repository <code>git clone git@github.com:codeready-toolchain/toolchain-e2e.git</code></p>
+<p>This repository provides you multiple Makefile targets that you can use - it depends on which version of KubeSaw operators you want to install.</p>
+<p>NOTE:
+Set the <code>DISABLE_KUBE_CLIENT_TLS_VERIFY</code> environment variable to <code>true</code> when the TLS connection to the cluster cannot be verified (eg: when it uses a self-signed certificate). For example: </p>
+<pre><code>make appstudio-dev-deploy-latest DISABLE_KUBE_CLIENT_TLS_VERIFY=true
+</code></pre>
+<p><strong>IMPORTANT</strong>: Make note of the Registration Service URL that is printed at the end of the target execution.</p>
+<h3 id="latest-greatest-kubesaw">Latest greatest KubeSaw</h3>
+<p>Run the following to install the latest greatest KubeSaw operators in dev mode:</p>
+<pre><code>make dev-deploy-latest
+</code></pre>
+<h3 id="latest-greatest-kubesaw-for-appstudio">Latest greatest KubeSaw for AppStudio</h3>
+<p>Run the following to install the latest greatest KubeSaw operators in dev mode for AppStudio environment:</p>
+<pre><code>make appstudio-dev-deploy-latest
+</code></pre>
+<h3 id="local-version">Local version</h3>
+<p>If you want to install a local version of a specific KubeSaw operator in dev mode then:</p>
+<ol>
+<li><a href="../quay-repo-config/">Configure your quay account for dev deployment</a></li>
+<li>Clone the <code>toolchain-e2e</code> repo (<code>git clone git@github.com:codeready-toolchain/toolchain-e2e.git</code>) and the operator(s) repo(s) that you'd like to test locally. They have to share the same parent folder for the local deployment to work, eg:</li>
+</ol>
+<pre><code class="language-shell">$ tree -d -L 1
+.
+├── host-operator
+├── member-operator
+├── registration-service
+├── toolchain-e2e
+</code></pre>
+<ol>
+<li>From the <code>toolchain-e2e</code> repo folder, run any of the following commands:</li>
+</ol>
+<pre><code class="language-bash"># To deploy local versions of all repositories:
+make dev-deploy-e2e-local
+
+# To deploy local version only of the host-operator repo:
+make dev-deploy-e2e-host-local
+
+# To deploy local version only of the member-operator repo:
+make dev-deploy-e2e-member-local
+
+# To deploy local version only of the registration-service repo:
+make dev-deploy-e2e-registration-local
+</code></pre>
+<h3 id="toolchainstatus">ToolchainStatus</h3>
+<p>Run the following command:</p>
+<pre><code class="language-shell">$ oc get toolchainstatus -n toolchain-host-operator
+
+NAME               MURS   READY   LAST UPDATED
+toolchain-status   0      True    2021-03-24T22:39:36Z
+</code></pre>
+<p>and ensure the Ready status is <code>True</code></p>
+<h3 id="register-a-new-kubesaw-user">Register a new KubeSaw User</h3>
+<ol>
+<li>
+<p>Open the Registration Service URL in a browser and sign up for an account.</p>
+</li>
+<li>
+<p>Wait for the message "Your OpenShift Developer Sandbox account is waiting for approval"</p>
+</li>
+</ol>
+<p><img alt="approval in progress" src="https://user-images.githubusercontent.com/20015929/114627893-01845d00-9c84-11eb-848e-0f85a1b3c01f.png" /></p>
+<h4 id="manual-approval">Manual Approval</h4>
+<p>Manual approval means each UserSignup must be approved by editing the UserSignup resource for a particular user.</p>
+<ol>
+<li>Run the following command to get the name of the UserSignup resource: <code>oc get usersignup</code>
+    The name should be a UUID eg. 66e54c45-9868-4a25-81ca-d56b600c8491</li>
+<li>Approve the UserSignup</li>
+</ol>
+<pre><code>oc patch usersignup -p '{&quot;spec&quot;:{&quot;states&quot;:[&quot;approved&quot;]}}' --type=merge &lt;usersignup name&gt; -n &lt;host operator namespace&gt;
+</code></pre>
+<h4 id="automatic-approval">Automatic Approval</h4>
+<p>By enabling automatic approval in the KubeSaw configuration, users will be automatically approved and provisioned without admin intervention.</p>
+<p>Enable automatic approval by running the following command:</p>
+<pre><code class="language-shell">oc patch ToolchainConfig -p '{&quot;spec&quot;:{&quot;host&quot;:{&quot;automaticApproval&quot;:{&quot;enabled&quot;:true}}}}' --type=merge config -n &lt;host operator namespace&gt;
+</code></pre>
+<h4 id="using-kubesaw-instance">Using KubeSaw instance</h4>
+<p>After approval, the registration service will display a link to start using the KubeSaw instance. The link will go to the user's Dev Console, but first, a login page will appear with two options.:</p>
+<ol>
+<li><em>kube:admin</em></li>
+<li>The authentication method configured in the <a href="#authentication">Authentication step</a>
+<img alt="Log in" src="https://user-images.githubusercontent.com/20015929/114628295-a141eb00-9c84-11eb-8be3-45f013e19378.png" />
+Select option 2 and log in using the same account used from the <a href="#register-a-new-kubesaw-user">Register a KubeSaw User section</a> step.</li>
+</ol>
+<p>After logging in, the user will have access to only the namespaces created for them.</p>
+<h3 id="cleanup">Cleanup</h3>
+<p><strong>NOTE</strong>: the make targets are available in the <code>toolchain-e2e</code> repo (<code>git clone git@github.com:codeready-toolchain/toolchain-e2e.git</code>)</p>
+<h4 id="remove-only-users-and-their-namespaces">Remove Only Users and Their Namespaces</h4>
+<p>Run <code>make clean-users</code></p>
+<h4 id="remove-all-sandbox-related-resources">Remove All Sandbox-related Resources</h4>
+<p>Run <code>make clean-e2e-resources</code></p>
+<h2 id="running-e2e-tests-locally">Running e2e tests locally</h2>
+<p>If you're interested in running/debugging the e2e tests locally, please refer to <a href="https://github.com/mfrancisc/toolchain-e2e/tree/movedocs?tab=readme-ov-file#running-locally">Running e2e locally</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ksctl-cheat-sheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: ksctl cheat sheet">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                ksctl cheat sheet
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.footer"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
